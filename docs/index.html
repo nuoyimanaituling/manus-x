@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ManusX 开源通用智能体</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="ManusX is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="32x32">
+  <style>
+    /* Excalidraw 手绘风格样式 */
+    .mermaid {
+      background: #fffbeb;
+      background-image:
+        linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 20px 0;
+      border: 2px solid #374151;
+      box-shadow: 4px 4px 0 #374151;
+    }
+
+    /* 手绘风格标题 */
+    .markdown-section h1 {
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      border-bottom: 3px solid #374151;
+      padding-bottom: 10px;
+    }
+
+    .markdown-section h2 {
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      color: #374151;
+      border-left: 4px solid #6366f1;
+      padding-left: 12px;
+      background: linear-gradient(90deg, #e0e7ff 0%, transparent 100%);
+    }
+
+    /* 手绘风格表格 */
+    .markdown-section table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      margin: 16px 0;
+      border: 2px solid #374151;
+      border-radius: 8px;
+      box-shadow: 3px 3px 0 #374151;
+      overflow: hidden;
+    }
+
+    .markdown-section table th {
+      background: #a5b4fc;
+      color: #1e293b;
+      font-weight: 600;
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      padding: 12px 16px;
+      border-bottom: 2px solid #374151;
+    }
+
+    .markdown-section table td {
+      padding: 10px 16px;
+      border-bottom: 1px dashed #94a3b8;
+      background: #fffbeb;
+    }
+
+    .markdown-section table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .markdown-section table tr:hover td {
+      background-color: #fef3c7;
+    }
+
+    /* 手绘风格代码块 */
+    .markdown-section pre {
+      border-radius: 8px;
+      border: 2px solid #374151;
+      box-shadow: 3px 3px 0 #374151;
+      background: #f8fafc;
+    }
+
+    /* 手绘风格引用 */
+    .markdown-section blockquote {
+      border-left: 4px solid #6366f1;
+      background: #e0e7ff;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-style: italic;
+    }
+
+    /* 侧边栏 Logo 样式 */
+    .sidebar .app-name-link {
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      font-weight: 600;
+      color: #374151;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar .app-name-link::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background-image: url('/logo.png');
+      background-size: 28px 28px;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'ManusX',
+      nameLink: '/',
+      repo: 'https://github.com/nuoyimanaituling/manus-x',
+      gtag: 'G-9GBMY0CD5J',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      loadNavbar: true,
+      homepage: 'README.md',
+      pagination: {
+        previousText: {
+          '/en/': 'PREVIOUS',
+          '/': '上一章节'
+        },
+        nextText: {
+          '/en/': 'NEXT',
+          '/': '下一章节'
+        },
+        crossChapter: true,
+        crossChapterText: true,
+      },
+    }
+  </script>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      look: 'handDrawn',
+      theme: 'base',
+      themeVariables: {
+        // 手绘风格配色 - 柔和的颜色
+        primaryColor: '#a5b4fc',
+        primaryTextColor: '#1e293b',
+        primaryBorderColor: '#6366f1',
+
+        secondaryColor: '#c4b5fd',
+        secondaryTextColor: '#1e293b',
+        secondaryBorderColor: '#8b5cf6',
+
+        tertiaryColor: '#fde68a',
+        tertiaryTextColor: '#1e293b',
+        tertiaryBorderColor: '#f59e0b',
+
+        background: '#fffbeb',
+        mainBkg: '#fef3c7',
+        nodeBorder: '#374151',
+        lineColor: '#374151',
+        textColor: '#1e293b',
+
+        // 手写风格字体
+        fontFamily: '"Comic Sans MS", "Segoe Print", "Bradley Hand", cursive, sans-serif',
+        fontSize: '14px',
+
+        // 时序图
+        actorBkg: '#a5b4fc',
+        actorTextColor: '#1e293b',
+        actorLineColor: '#6366f1',
+        signalColor: '#6366f1',
+        activationBkgColor: '#e0e7ff',
+
+        // 状态图
+        labelColor: '#1e293b',
+      },
+      flowchart: {
+        curve: 'natural',
+        padding: 20,
+        nodeSpacing: 50,
+        rankSpacing: 60,
+        htmlLabels: true,
+        useMaxWidth: true,
+        defaultRenderer: 'elk',
+      },
+      sequence: {
+        diagramMarginX: 50,
+        diagramMarginY: 30,
+        actorMargin: 80,
+        width: 180,
+        height: 50,
+        mirrorActors: true,
+        useMaxWidth: true,
+      },
+    });
+    window.mermaid = mermaid;
+  </script>
+  <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/dist/plugins/gtag.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+
+</html>

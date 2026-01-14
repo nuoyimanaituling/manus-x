@@ -1,0 +1,106 @@
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "goal": "test goal",
+            "title": "test title",
+            "steps": [
+              {
+                "id": "1",
+                "description": "test shell tools"
+              }
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_exec
+              arguments: |
+                {
+                    "id": "shell-1",
+                    "exec_dir": "/home/ubuntu",
+                    "command": "ls -la"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_view
+              arguments: |
+                {
+                    "id": "shell-1"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_wait
+              arguments: |
+                {
+                    "id": "shell-1",
+                    "seconds": 10
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_write_to_process
+              arguments: |
+                {
+                    "id": "shell-1",
+                    "input": "y",
+                    "press_enter": true
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_kill_process
+              arguments: |
+                {
+                    "id": "shell-1"
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          test file end
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "steps": []
+          }

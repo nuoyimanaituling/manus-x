@@ -1,0 +1,188 @@
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "goal": "test goal",
+            "title": "test title",
+            "steps": [
+              {
+                "id": "1",
+                "description": "test browser tools"
+              }
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_navigate
+              arguments: |
+                {
+                    "url": "https://www.example.com"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_view
+              arguments: |
+                {}
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_click
+              arguments: |
+                {
+                    "index": 0
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_input
+              arguments: |
+                {
+                    "text": "search query",
+                    "press_enter": true,
+                    "index": 0
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_move_mouse
+              arguments: |
+                {
+                    "coordinate_x": 100,
+                    "coordinate_y": 200
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_press_key
+              arguments: |
+                {
+                    "key": "Control+A"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_select_option
+              arguments: |
+                {
+                    "index": 0,
+                    "option": 2
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_scroll_up
+              arguments: |
+                {
+                    "to_top": true
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_scroll_down
+              arguments: |
+                {
+                    "to_bottom": true
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_console_exec
+              arguments: |
+                {
+                    "javascript": "console.log('Hello from console!')"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_console_view
+              arguments: |
+                {
+                    "max_lines": 10
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          test file end
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "steps": []
+          }

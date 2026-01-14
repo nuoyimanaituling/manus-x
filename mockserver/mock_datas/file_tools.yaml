@@ -1,0 +1,113 @@
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "goal": "test goal",
+            "title": "test title",
+            "steps": [
+              {
+                "id": "1",
+                "description": "test file tools"
+              }
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_write
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.txt",
+                    "content": "New content\nSecond line",
+                    "append": false,
+                    "leading_newline": true,
+                    "trailing_newline": true
+                }
+
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_read
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.txt",
+                    "start_line": 0,
+                    "end_line": 10
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_str_replace
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.txt",
+                    "old_str": "old text",
+                    "new_str": "new text"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_find_in_content
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.txt",
+                    "regex": "pattern.*"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_find_by_name
+              arguments: |
+                {
+                    "path": "/home/ubuntu",
+                    "glob": "*.txt"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          test file end
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "steps": []
+          }

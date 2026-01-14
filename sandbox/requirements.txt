@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+email-validator
+python-multipart
+pydantic-settings
+# PDF processing libraries
+pymupdf
+pdfplumber
+reportlab

@@ -1,0 +1,46 @@
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "goal": "test goal",
+            "title": "test title",
+            "steps": [
+              {
+                "id": "1",
+                "description": "test message tools"
+              }
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: message_notify_user
+              arguments: |
+                {
+                    "text": "Task is in progress, please wait..."
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          test message end
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "steps": []
+          }

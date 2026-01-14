@@ -1,0 +1,40 @@
+# 依赖目录
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# 编辑器和IDE文件
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 构建输出
+dist
+dist-ssr
+coverage
+
+# 本地环境文件
+.env.local
+.env.*.local
+
+# 日志
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 其他
+.DS_Store
+.git
+.gitignore
+README.md
+**/TEST*
+**/.env 

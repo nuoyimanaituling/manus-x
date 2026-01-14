@@ -1,0 +1,163 @@
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "goal": "test goal",
+            "title": "test title",
+            "steps": [
+              {
+                "id": "1",
+                "description": "test step"
+              }
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: message_notify_user
+              arguments: |
+                {
+                    "text": "test message tools."
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: info_search_web
+              arguments: |
+                {
+                    "query": "latest AI developments 2024",
+                    "date_range": "past_month"
+                }
+      finish_reason: stop
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_write
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.txt",
+                    "content": "New content\nSecond line",
+                    "append": false,
+                    "leading_newline": true,
+                    "trailing_newline": true
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_write
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.md",
+                    "content": "## Header\n\nThis is a test\n\n### Subheader",
+                    "append": false,
+                    "leading_newline": true,
+                    "trailing_newline": true
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: file_write
+              arguments: |
+                {
+                    "file": "/home/ubuntu/example.py",
+                    "content": "print('Hello, World!')",
+                    "append": false,
+                    "leading_newline": true,
+                    "trailing_newline": true
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: shell_exec
+              arguments: |
+                {
+                    "id": "shell-1",
+                    "exec_dir": "/home/ubuntu",
+                    "command": "ls -a"
+                }
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: null
+        tool_calls:
+          - type: function
+            function:
+              name: browser_navigate
+              arguments: |
+                {
+                    "url": "https://www.example.com"
+                }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "success": true,
+            "result": "test end",
+            "attachments": [
+              "/home/ubuntu/example.txt",
+              "/home/ubuntu/example.md",
+              "/home/ubuntu/example.py"
+            ]
+          }
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "steps": []
+          }
+      finish_reason: stop
+
+- choices:
+    - index: 0
+      message:
+        role: assistant
+        content: |
+          {
+            "message": "This is a test",
+            "attachments": [
+              "/home/ubuntu/example.txt",
+              "/home/ubuntu/example.md",
+              "/home/ubuntu/example.py"
+            ]
+          }
