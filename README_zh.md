@@ -526,7 +526,6 @@ AUTH_PROVIDER=none
 - **📝 文档**: [完整文档](https://nuoyimanaituling.github.io/manus-x)
 - **💬 讨论**: [GitHub Discussions](https://github.com/nuoyimanaituling/manus-x/discussions)
 - **🐛 Bug 报告**: [GitHub Issues](https://github.com/nuoyimanaituling/manus-x/issues)
-- **👥 QQ 群**: 867594163
 
 ---
 

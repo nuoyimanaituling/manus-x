@@ -532,7 +532,6 @@ We welcome contributions from the community!
 1. Check the [Documentation](https://nuoyimanaituling.github.io/manus-x)
 2. Search [existing issues](https://github.com/nuoyimanaituling/manus-x/issues)
 3. Ask in [GitHub Discussions](https://github.com/nuoyimanaituling/manus-x/discussions)
-4. Join our QQ Group: 867594163
 
 ---
 
