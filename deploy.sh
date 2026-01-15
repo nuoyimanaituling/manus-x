@@ -9,7 +9,7 @@ set -e
 REMOTE_USER="root"
 REMOTE_HOST="120.77.218.136"
 REMOTE_DIR="/root/manus-x"
-LOCAL_PROJECT_DIR="/Users/bytedance/PycharmProjects/manus-x"
+LOCAL_PROJECT_DIR="/Users/PycharmProjects/manus-x"
 PACKAGE_NAME="manus-x.tar.gz"
 
 echo "=========================================="

@@ -8,7 +8,7 @@ set -e
 REMOTE_USER="root"
 REMOTE_HOST="120.77.218.136"
 REMOTE_DIR="/root/manus-x"
-LOCAL_DIR="/Users/bytedance/PycharmProjects/manus-x"
+LOCAL_DIR="/Users/PycharmProjects/manus-x"
 
 UPDATE_TYPE="${1:-all}"
 
